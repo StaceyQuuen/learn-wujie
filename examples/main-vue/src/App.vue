@@ -5,43 +5,14 @@
       <!-- vue2相关路由 -->
       <router-link to="/vue2">
         vue2
-        <a-icon
-          :class="['main-icon', { active: vue2Flag }]"
-          type="caret-up"
-          @click.native="handleFlag('vue2')"
-        />
+        <!-- <a-icon :class="['main-icon', { active: vue2Flag }]" type="caret-up" @click.native="handleFlag('vue2')" /> -->
       </router-link>
-      <div class="sub-menu" v-show="vue2Flag">
+      <!-- <div class="sub-menu" v-show="vue2Flag">
         <router-link to="/vue2-sub/home">home</router-link>
         <router-link to="/vue2-sub/dialog">dialog</router-link>
         <router-link to="/vue2-sub/location">location</router-link>
         <router-link to="/vue2-sub/communication">communication</router-link>
-      </div>
-      <!-- vue3相关路由 -->
-      <router-link v-if="degrade" to="/vue3">
-        vue3
-        <span class="alive">保活</span>
-        <a-icon
-          :class="['main-icon', { active: vue3Flag }]"
-          type="caret-up"
-          @click.native="handleFlag('vue3')"
-        />
-      </router-link>
-      <div class="sub-menu" v-show="vue3Flag">
-        <router-link to="/vue3-sub/home">home</router-link>
-        <router-link to="/vue3-sub/dialog">dialog</router-link>
-        <router-link to="/vue3-sub/location">location</router-link>
-        <router-link to="/vue3-sub/contact">contact</router-link>
-        <router-link to="/vue3-sub/state">state</router-link>
-      </div>
-      <router-link to="/all">all</router-link>
-      <a-button
-        class="menu-icon"
-        type="primary"
-        icon="unordered-list"
-        size="large"
-        @click.stop="active = !active"
-      />
+      </div> -->
     </div>
     <div class="content" @click="active = false">
       <router-view />
@@ -56,7 +27,6 @@ export default {
     return {
       active: false,
       vue2Flag: this.$route.name === "vue2-sub",
-      vue3Flag: this.$route.name === "vue3-sub",
       degrade: window.Proxy,
     };
   },

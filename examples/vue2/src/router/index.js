@@ -1,28 +1,26 @@
-import Home from "../views/Home.vue";
-
 const routes = [
-  {
-    path: "/",
-    redirect: "/home",
-  },
-  {
-    path: "/home",
-    component: Home,
-  },
-  {
-    path: "/dialog",
-    name: "dialog",
-    component: () => import(/* webpackChunkName: "Page1" */ "../views/Dialog.vue"),
-  },
   {
     path: "/communication",
     name: "communication",
-    component: () => import(/* webpackChunkName: "Page2" */ "../views/Communication.vue"),
+    component: () => import(/* webpackChunkName: "mode" */ "../views/CommunicationView.vue"),
   },
   {
-    path: "/location",
-    name: "location",
-    component: () => import(/* webpackChunkName: "Page3" */ "../views/Location.vue"),
+    path: "/mode",
+    name: "mode",
+    // route level code-splitting
+    // this generates a separate chunk (mode.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "mode" */ "../views/ModeView.vue"),
+  },
+  {
+    path: "/jump",
+    name: "jump",
+    component: () => import(/* webpackChunkName: "jump" */ "../views/JumpView.vue"),
+  },
+  {
+    path: "/share",
+    name: "share",
+    component: () => import(/* webpackChunkName: "share" */ "../views/ShareView.vue"),
   },
 ];
 
